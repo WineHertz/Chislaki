@@ -6,11 +6,17 @@ from fractions import Fraction
 
 
 def com(s):
+    
     """
+    
     Функция, которая преобразует комплексное число в правильный вид
+    
     :params s: введенное число(строка)
+    
     :return s_new: преобразованное число(строка)
+    
     """
+    
     s_new = ''
     k = []
     for i in range(len(s)):
@@ -26,11 +32,17 @@ def com(s):
         s_new += k[i]
     return s_new
 def comm(s):
+    
     """
+    
     Функция, которая преобразует комплексное число в правильный вид
+    
     :params s: введенное число(строка)
+    
     :return s_new: преобразованное число(строка)
+    
     """
+    
     s_new = ''
     k = []
     for i in range(len(s)):
@@ -47,10 +59,15 @@ def comm(s):
     return s_new
 
 def input_of_matrix():
+    
     """
+    
     Функция, которая позволяет ввести матрицу с клавиатуры
+    
     :return matrix: введенная матрица
+    
     """
+    
     while True:
         try:
             columns, rows = map(int, input('\nРазмер матрицы составляет:\nКоличество столбцов и строк:\t').split())
@@ -108,13 +125,21 @@ def input_of_matrix():
     return matrix
 
 def minor(A, i, j):
+    
     """
+    
     Функция, которая считает минор матрицы
+    
     :params A: матрица
+    
     :params i: строка, которая удалится
+    
     :params j: столбец, который удалится
+    
     :return M: минор
+    
     """
+    
     M = copy.deepcopy(A)
     del M[i]
     for i in range(len(A[0]) - 1):
@@ -123,11 +148,17 @@ def minor(A, i, j):
 
 
 def det(A):
+    
     """
+    
     Функция, которая считает определитель матрицы
+    
     :params A: матрица
+    
     :return determinant: определитель матрицы
+    
     """
+    
     m = len(A)
     n = len(A[0])
     if m != n:
@@ -144,21 +175,32 @@ def det(A):
 
 
 def opr_vv_m(a):
+    
     """
+    
     Функция, которая считает определитель введенной матрицы
+    
     :params a: введенная матрица
+    
     :return det(matrix): определитель введенной матрицы
+    
     """
+    
     matrix = a
     print()
     print('Определитель введенной матрицы равен')
     return det(matrix)
 
 def generator_of_matrix():
+    
     """
+    
     Функция, которая выводит сгенерированную матрицу
+    
     :return matrix: сгенерированная матрица
+    
     """
+    
     while True:
         try:
             columns, rows = map(int, input('\nРазмер матрицы составляет:\nКоличество столбцов и строк:\t').split())
@@ -171,10 +213,15 @@ def generator_of_matrix():
 
 
 def jacobi(matrix):
+    
     """
+    
     Функция, которая решает СЛАУ методом Якоби
+    
     :params matrix: матрица
+    
     """
+    
     for i in range(len(matrix)):
         if matrix[i][i] == 0:
             for j in range(len(matrix)):
@@ -192,10 +239,15 @@ def jacobi(matrix):
     b = [lst[0] for lst in b]
 
     def isCorrectArray(a):
+        
         """
+        
         Функция, которая проверяет коэффициента матрицы на их корректность
+        
         :params a: матрица
+        
         """
+        
         for row in range(0, len(a)):
             if (len(a[row]) != len(b)):
                 print('Не соответствует размерность')
@@ -204,13 +256,20 @@ def jacobi(matrix):
 
 
     def isNeedToComplete(x_old, x_new):
+        
         """
+        
         Условие завершения программы на основе вычисления расстояния между соответствующими элементами
         соседних итераций
+        
         :params x_old: предыдущая итерация
+        
         :params x_new: новая итерация
+        
         :return math.sqrt(sum_up / sum_low) < eps: True or False, условие завершения программы
+        
         """
+        
         eps = 0.0001
         sum_up = 0
         sum_low = 0
@@ -222,12 +281,19 @@ def jacobi(matrix):
 
 
     def solution(a, b):
+        
         """
+        
         Процедура решения
+        
         :params a: матрица коэффициентов
+        
         :params b: матрица свободных членов
+        
         :return: матрица решений x
+        
         """
+        
         if (not isCorrectArray(a)):
             print('Ошибка в исходных данных')
         else:
@@ -259,11 +325,17 @@ def jacobi(matrix):
 
 
 def gauss_jord(matrix):
+    
     """
+    
     Функция, которая решает СЛАУ прямым методом Жордана-Гаусса
+    
     :params matrix: расширенная матрица
+    
     :return: матрица решений x, матрица коэффициентов, обратная матрица коэффициентов
+    
     """
+    
     b = []
     a = []
     for i in range(len(matrix)):
@@ -294,11 +366,17 @@ def gauss_jord(matrix):
 
 
 def gauss_jord_rational(matrix):
+    
     """
+    
     Функция, которая решает СЛАУ методом Жордана-Гаусса с дробями
+    
     :params matrix: расширенная матрица
+    
     :return: решения x
+    
     """
+    
     for i in range(len(matrix)):
         for j in range(len(matrix[0])):
             matrix[i][j] = Fraction(matrix[i][j])
@@ -327,11 +405,17 @@ def gauss_jord_rational(matrix):
         print(f'X{i} = {Fraction(x[i]).numerator}/{Fraction(x[i]).denominator} = {round(Fraction(x[i]), 2)}')
 
 def main(matrix):
+    
     """
+    
     Главная функция порядка вызова других функций
+    
     :params matrix: расширенная матрица
+    
     :return: решения СЛАУ различными методами
+    
     """
+    
     delta = 0.001
     b = []
     a = []
