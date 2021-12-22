@@ -5,14 +5,19 @@ mas1 = np.array([]); mas2 = np.array([]); mas3 = np.array([])
 mas4 = np.array([]); mas5 = np.array([]); mas6 = np.array([])
 
 def f(x):
+    
     """
+    
     Функция, которая возвращает значение f(x)
+    
     :params x: значение x
 
     :params func: заданная функция в типе str()
 
     :return: значение в точке x.
+    
     """
+    
     try:
         a = eval(func)
     except ZeroDivisionError:
@@ -21,8 +26,11 @@ def f(x):
 
 
 def fdx(x, h, func):
+    
     """
-    Функция, которая рассчитывает значение производной в конкретной точке методом двусторонней разности.
+    
+    Функция, которая рассчитывает значение производной в конкретной точке методом двусторонней разности
+    
     :params x: значение x
 
     :params h: шаг дифференцирования
@@ -30,7 +38,9 @@ def fdx(x, h, func):
     :params func: заданная функция в типе str()
 
     :return a: значение в дифференциале
+    
     """
+    
     try:
         a = (f(x + h, func) - f(x - h, func)) / (2 * h)
     except ZeroDivisionError:
@@ -39,8 +49,11 @@ def fdx(x, h, func):
 
 
 def F(h, x, f):
+    
     """
-    Функция, которая рассчитывает значение интеграла в точке от x до x+шаг.
+    
+    Функция, которая рассчитывает значение интеграла в точке от x до x+шаг
+    
     :params h: шаг дифференцирования
 
     :params func: заданная функция в типе str()
@@ -48,7 +61,9 @@ def F(h, x, f):
     :params x: значение x
 
     :return a: значение интеграла от x до (x+шаг)
+    
     """
+    
     try:
         a = (f(h) + f(x)) * (x - h) / 2
     except ZeroDivisionError:
@@ -57,7 +72,9 @@ def F(h, x, f):
 
 
 def integ(a, b, step, func):  # рассчет интеграла и вывод результата
+    
     """
+    
     Функция, рассчитывающая интеграл от a до b
 
     :params a: нижний предел
@@ -69,9 +86,13 @@ def integ(a, b, step, func):  # рассчет интеграла и вывод 
     :params func: заданная функция в типе str()
 
     :return mas4: значение x
+    
             mas5: значение интеграла в точке от x до x+шаг
+            
             mas6: значение самой функции
+            
     """
+    
     inter = a + step
     mas4 = np.arange(int((b - a) / step) + 2)
     mas5 = np.arange(int((b - a) / step) + 2)
@@ -86,7 +107,9 @@ def integ(a, b, step, func):  # рассчет интеграла и вывод 
 
 
 def diff(a, b, step, func):  # рассчет дифференциала и вывод результата, когда a,b>0
+    
     """
+    
     Функция, рассчитывающая дифференциал от a до b
 
     :params a: нижний предел
@@ -98,9 +121,13 @@ def diff(a, b, step, func):  # рассчет дифференциала и вы
     :params func: заданная функция в типе str()
 
     :return mas1: значение x
+    
             mas2: значение производной в точке
+            
             mas3: значение самой функции
+            
     """
+    
     inter = a
     mas1 = np.arange(int((b - a) / step) + 2)
     mas2 = np.arange(int((b - a) / step) + 2)
