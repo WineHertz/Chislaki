@@ -18,11 +18,12 @@ def f(x, flag=False):
     
     """)
     
-    try:
-        a = eval(func)
-    except ZeroDivisionError:
-        a = inf
-    return a
+    else:
+        try:
+            a = eval(func)
+        except ZeroDivisionError:
+            a = inf
+        return a
 
 
 def fdx(x, h, func):
