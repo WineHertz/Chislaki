@@ -271,7 +271,6 @@ class TSP:
             print(path[i - 1], [path[i]])
         return c
 
-    @timer
     def Boltsman(self, t0=1000):
         """
         Реализация метода имитации Больцмановского отжига
@@ -314,7 +313,6 @@ class TSP:
             ct = t(counter)
         return x, self.countPathCost(x)
 
-    @timer
     def AntColonyMethod(self, n_ants=None, n_best=5, n_iterations=None):
         """
         Реализация Муравьиного алгоритма

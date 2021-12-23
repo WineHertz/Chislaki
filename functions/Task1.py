@@ -1,6 +1,7 @@
 from math import *
 from mpmath import *
 import numpy as np
+
 mas1 = np.array([])
 mas2 = np.array([])
 mas3 = np.array([])
