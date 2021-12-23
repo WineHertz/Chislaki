@@ -4,15 +4,9 @@ import Task5
 
 s = input('Введите команду: ')
 while s != 'exit':
-  if s.endswith(" -h"):
-    if list(s.split())[0] == 'f':
-      print("""
-    
-    Функция, которая возвращает значение f(x)
-    
-    :params x: значение x
-    :params func: заданная функция в типе str()
-    :return: значение в точке x.
-    
-    """)
+  if s.startswith('f ')
+    if s.endswith(" -h"):
+      Task1.f(0, flag=True)
+    else:
+      Task1.f(list(s.split())[1])
 s = input('Введите команду: ')
