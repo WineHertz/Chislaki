@@ -4,9 +4,9 @@ import numpy as np
 mas1 = np.array([]); mas2 = np.array([]); mas3 = np.array([])
 mas4 = np.array([]); mas5 = np.array([]); mas6 = np.array([])
 
-def f(x):
-    
-    """
+def f(x, flag=False):
+    if flag:
+    print("""
     
     Функция, которая возвращает значение f(x)
     
@@ -16,7 +16,7 @@ def f(x):
 
     :return: значение в точке x.
     
-    """
+    """)
     
     try:
         a = eval(func)
