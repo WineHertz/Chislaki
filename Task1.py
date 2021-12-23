@@ -6,7 +6,7 @@ mas4 = np.array([]); mas5 = np.array([]); mas6 = np.array([])
 
 def f(x, flag=False):
     if flag:
-    print("""
+        print("""
     
     Функция, которая возвращает значение f(x)
     
