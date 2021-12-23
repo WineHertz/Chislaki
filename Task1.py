@@ -8,26 +8,20 @@ mas4 = np.array([])
 mas5 = np.array([])
 mas6 = np.array([])
 
-def f(x, flag=False):
-    if flag:
-        print("""
-    
+def f(x, func):
+    """
     Функция, которая возвращает значение f(x)
-    
     :params x: значение x
-
+    
     :params func: заданная функция в типе str()
-
-    :return: значение в точке x.
     
-    """)
-    
-    else:
-        try:
-            a = eval(func)
-        except ZeroDivisionError:
-            a = inf
-        return a
+    :return: значение в точке x. 
+    """
+    try:
+        a = eval(func)
+    except ZeroDivisionError:
+        a = 0
+    return a
 
 
 def fdx(x, h, func):
